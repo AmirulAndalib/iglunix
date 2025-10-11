@@ -1,4 +1,4 @@
-pkgver=20.1.6
+pkgver=21.1.3
 pkgname=llvm
 runtime_subpkgs="libunwind libunwind-dev libcxx libcxx-dev libclang-rt-dev"
 library_subpkgs="liblld-dev libclang libclang-dev libllvm libllvm-dev"
@@ -150,7 +150,7 @@ libclang-rt-dev() {
 }
 
 libllvm() {
-	shlibs="libLLVM.so.20.1"
+	shlibs="libLLVM.so.21.1"
 	find usr/lib/libLLVM.so.*
 }
 
