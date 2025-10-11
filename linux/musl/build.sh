@@ -1,8 +1,8 @@
 pkgver=1.2.5
 pkgname=musl
+subpkgs="musl musl-dev"
 desc="C Standard Library"
 mkdeps="bad:gmake"
-shlibs="libc.so"
 bad="gmake"
 ext="dev"
 
@@ -43,6 +43,17 @@ package() {
 		install -d $pkgdir/$PREFIX/bin
 		ln -sr $pkgdir/lib/ld-musl-$ARCH.so.1 $pkgdir/$PREFIX/bin/ldd
 	fi
+}
+
+musl() {
+	shlibs=libc.so
+	find lib usr/lib/libc.so
+	find usr/bin
+}
+
+musl-dev() {
+	find usr/include
+	find usr/lib/*.a usr/lib/*.o
 }
 
 backup() {
