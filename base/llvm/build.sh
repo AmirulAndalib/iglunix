@@ -150,6 +150,7 @@ libclang-rt-dev() {
 }
 
 libllvm() {
+	shlibs="libLLVM.so.20.1"
 	find usr/lib/libLLVM.so.*
 }
 
